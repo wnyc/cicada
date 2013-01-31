@@ -1,0 +1,207 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+
+
+<!-- Chartbeat Time Capture -->
+  <script type="text/javascript">var _sf_startpt=(new
+  Date()).getTime()</script>
+  
+<title>NYC Jobs | WNYC</title> 
+
+<link rel="stylesheet" href="http://project.wnyc.org/assets/css/embed.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="css/dropdown.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="css/chart.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="css/jquery.alerts.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css' />
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.4&sensor=false"></script>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/highcharts.js"></script>
+<script type="text/javascript" src="http://project.wnyc.org/census-maps/js/jquery.url.min.js"></script> 
+<script src="js/jquery.alerts.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://project.wnyc.org/assets/js/buttons.js"></script>
+<script type="text/javascript" src="js/sample_random.js"></script>
+
+<meta property="og:title" content="NYC Jobs | WNYC" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://www.wnyc.org/articles/wnyc-news/2012/sep/14/new-york-city-economy-four-years-later-it-gets-better/" />
+
+<script>
+
+var map;
+var geocoder;
+var mapdrawn = false;
+var basemap_location = "http://project.wnyc.org/nyc-econ-unemployment/embed.html";
+var embedmap_location = "http://project.wnyc.org/nyc-econ-unemployment/embed.html";
+
+// get named params from the URL using jquery.url.min.js
+var map_lat = $.url.param("lat");
+var map_lon = $.url.param("lon");
+var map_zoom = $.url.param("zoom");
+var show_center = $.url.param("show_center");
+var is_embed = $.url.param("embed");
+var embed_size = 352;
+
+
+// set initial starting point for map
+var centerpoint = new google.maps.LatLng(map_lat, map_lon);
+var MY_MAPTYPE_ID = 'wnyc';
+
+// set fusion table to use
+
+
+
+
+</script>
+
+<!-- Start Google Analytic Code --> 
+<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-283599-23']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type =
+'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+<!-- End Google Analytic Code -->
+
+</head> 
+
+
+<body style="background:white">
+
+<!-- MAP TOP -->
+
+<div id="social">
+    <iframe id="facebook_button" src="http://www.facebook.com/plugins/like.php?app_id=199400463461226&amp;href=http%3A%2F%2Fwww.wnyc.org%2Farticles%2Fwnyc-news%2F2012%2Fsep%2F14%2Fnew-york-city-economy-four-years-later-it-gets-better%2F&amp;send=false&amp;layout=button_count&amp;width=56&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;" scrolling="no" frameborder="0" style="border:none;margin-right: 5px; overflow:hidden; width:48px; height: 21px; float:right" allowTransparency="true"></iframe>
+
+
+    <div id="twitter_button" style="float:right; width:56px; overflow:hidden; margin-right: 5px">
+          <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.wnyc.org/articles/wnyc-news/2012/sep/14/new-york-city-economy-four-years-later-it-gets-better/" data-count="none" data-text="Chart: NYC Jobs, part of #30issues in 30 days by @BrianLehrer and @WNYC">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    </div>
+</div>
+    
+<div id="container">
+<div id="map_body">
+    <div id="header">
+    <div id="titleline">
+        <div id="headerimg">
+            <a href="" target="_blank"><img src="http://project.wnyc.org/assets/img/header_logo.png"></a>
+        </div>
+        <div id="headertitle">
+            NYC Jobs
+        </div>
+    </div>
+
+    <div id="headertext">
+    Size of the NYC workforce.
+    </div>
+    </div>
+    <!-- THE CHART -->
+    <div id="meta-container">
+    <div id="chart-container"></div>
+    </div>
+    <div id="footerbar">
+        <div id="datalink" class="footerbutton footerbutton-left">
+            <a href="javascript:dataBox();" >
+            <img src="http://project.wnyc.org/assets/img/tools_data_off.png" ></img>
+            </a>
+        </div>
+
+        <div id="embedlink" class="footerbutton footerbutton-left">
+            <a href="javascript:embedBox();" >
+            <img src="http://project.wnyc.org/assets/img/tools_embed_off.png" ></img>
+            </a>
+        </div>
+        <div id="creditlink" class="footerbutton footerbutton-right">
+            <a href="javascript:creditBox();" >
+            <img src="http://project.wnyc.org/assets/img/tools_credits_off.png" ></img>
+            </a>
+        </div>
+        <div id="storylink" class="footerbutton footerbutton-right">
+            <a href="http://www.wnyc.org/articles/wnyc-news/2012/sep/14/new-york-city-economy-four-years-later-it-gets-better/" target="_blank" >
+            <img src="http://project.wnyc.org/assets/img/tools_story_off.png" ></img>
+            </a>
+        </div>
+    </div>
+    <div id="creditbox" class="popupbox">
+        <img src="http://project.wnyc.org/assets/img/header_credits.png"></img>
+        <div class="boxhed">Made by</div>
+        <div class="boxtext">John Keefe, Steven Melendez and Louise Ma / WNYC. Follow us @<a href="https://twitter.com/datanews" target="_blank">datanews</a>, email us <a href="mailto:jkeefe@wnyc.org?subject=Chart_Feedback">here</a>.</div>
+        <div class="closebutton">
+            <img src="http://project.wnyc.org/assets/img/button_close_off.png" id="closecreditbox"></img>
+        </div>
+
+    </div>
+    <div id="embedbox" class="popupbox">
+        <img src="http://project.wnyc.org/assets/img/header_embed.png"></img>
+        <div class="boxhed">Embed this chart</div>
+        <div class="boxtext" id="embedcode"></div>
+        <div class="closebutton">
+            <img src="http://project.wnyc.org/assets/img/button_close_off.png" id="closeembedbox"></img>
+        </div>
+    </div>
+
+    <div id="databox" class="popupbox">
+        <img src="http://project.wnyc.org/assets/img/header_data.png"></img>
+        <div class="boxtext">Chart shows total seasonally adjusted New York City employment.</div>
+        <div class="boxhed">Source</div>
+		<div class="boxtext">Barbara Byrne Denham of <a href="http://www.easternconsolidated.com/nyc-employment-alert" target="_blank">Eastern Consolidated</a></div>
+		<div class="boxhed">Updated</div>
+        <div class="boxtext">Sept. 14, 2012</div>
+        <div class="closebutton">
+            <img src="http://project.wnyc.org/assets/img/button_close_off.png" id="closedatabox"></img>
+        </div>
+    </div>
+
+
+
+
+
+    </div>
+</div>
+</div>
+<!-- Put legend here -->
+</body>
+
+
+<!-- End Box (aka dropdown) -->
+
+
+<!-- BEGIN MAP FOOTER -->
+<!-- END MAP FOOTER -->
+
+<!-- Begin Chartbeat Code -->
+<script type="text/javascript">
+var _sf_async_config={uid:4030,domain:"project.wnyc.org"};
+(function(){
+ function loadChartbeat() {
+   window._sf_endpt=(new Date()).getTime();
+   var e = document.createElement('script');
+   e.setAttribute('language', 'javascript');
+   e.setAttribute('type', 'text/javascript');
+   e.setAttribute('src',
+      (("https:" == document.location.protocol) ?
+"https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" :
+"http://static.chartbeat.com/") +
+      "js/chartbeat.js");
+   document.body.appendChild(e);
+ }
+ var oldonload = window.onload;
+ window.onload = (typeof window.onload != 'function') ?
+    loadChartbeat : function() { oldonload(); loadChartbeat(); }; })();
+</script>
+<!-- End Chartbeat Code -->
+
+</body> 
+</html>

@@ -17,7 +17,7 @@
 <body>
 	
 	<div id="chartHeader">
-		<div class="current">Current time <span id="" class="display_date">3:01pm Feb 1 2013 Fri</span></div>
+		<div class="current">Current time <span id="top_date" class="display_date">3:01pm Feb 1 2013 Fri</span></div>
 	</div>
 	
 	<div id="chart-container">
@@ -25,13 +25,13 @@
 	
 	<div id="chartFooter">
 		<div class="reading">
-			<span id="big_temp" class="temp">--</span>
-			<span id="date_line" class="display_date">3:00pm Feb 1 2013 Fri</span>
+			<span id="big_temp" class="temp">-</span>
+			<span id="date_line" class="display_date"></span>
 		</div>
 		<div class="alert">
-			<div class="cicada"><img src="alertYes.png" /></div>
-			<span id="" class="yn">Yes</span>
-			<span class="message"><em>Magicicada</em> <span id="">has emerged</span></span>
+			<div class="cicada" id="bug_pic"><img src="alertNo.png" /></div>
+			<span id="yesno" class="yn">No</span>
+			<span class="message"><em>Magicicada</em> <span id="detected">not detected</span></span>
 		</div>
 	</div>
 

@@ -53,11 +53,25 @@ $(function () {
 
                             var x = (new Date()).getTime(), // current time
                                 y = temp;
+								// y = getRandomInt(50, 70);
+								 
                             series.addPoint([x, y], true, true);
 
-							$('#big_temp').html(y + '&deg;f');
-							$('#date_line').html(x);
+							$('#big_temp').html(Math.round(y) + '&deg;f');
+							x_formatted = Highcharts.dateFormat('%l:%M %P %a %b %e, %Y', x, true);
+							$('#date_line').html(x_formatted);
+							$('#top_date').html(x_formatted);
 							
+							
+							if (y < 64) {
+								$('#bug_pic').html('<img src="alertNo.png" />');
+								$('#yesno').html('No');
+								$('#detected').html('not detected');
+							} else {
+								$('#bug_pic').html('<img src="alertYes.png" />');
+								$('#yesno').html('Yes');
+								$('#detected').html('detected!');
+							}
 							
 							if (hasGreenBand === false && y >= 64 ) {
 								hasGreenBand = true;
@@ -76,7 +90,7 @@ $(function () {
 										},
 										textAlign: ' ',
 										x: 10,
-										y: 40
+										y: 39
 									}
 									
 								});
@@ -99,7 +113,7 @@ $(function () {
 										},
 										textAlign: ' ',
 										x: 10,
-										y: 40
+										y: 39
 									}
 									
 								});
@@ -158,7 +172,7 @@ $(function () {
 						},
 						textAlign: ' ',
 						x: 10,
-						y: 40
+						y: 39
 					}
 				}
 				],

@@ -40,7 +40,7 @@ $(function () {
                                 y = getRandomInt(50, 70);
                             series.addPoint([x, y], true, true);
 
-							$('#big_temp').html(y + ' f');
+							$('#big_temp').html(y + '&deg;f');
 							$('#date_line').html(x);
 							
 							

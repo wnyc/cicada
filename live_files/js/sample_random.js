@@ -36,8 +36,23 @@ $(function () {
                         // set up the updating of the chart each second
                         var series = this.series[0];
                         setInterval(function() {
+                         // Get the JSON dict of the latest reading.
+
+                            $.ajax({
+				dataType: "jsonp",
+				url: 'http://192.168.1.12:8000/readings/retrieve_latest/',
+				success: function(data) {
+                                     console.log(data);
+
+			             temp = data.temp;
+                                     confidence = data.confidence;
+                                },
+				jsonpCallback: 'llamas'
+	                    });
+                            
+
                             var x = (new Date()).getTime(), // current time
-                                y = getRandomInt(50, 70);
+                                y = temp;
                             series.addPoint([x, y], true, true);
 
 							$('#big_temp').html(y + ' f');

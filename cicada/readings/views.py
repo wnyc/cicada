@@ -2,7 +2,9 @@ from .models import TempAndAudioReading
 from django.http import HttpResponse
 from django.views.decorators.http import require_http_methods
 import json
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
 @require_http_methods(["POST"])
 def listen(request):
     temp = request.POST['temp']
@@ -24,5 +26,5 @@ def retrieve_latest(request):
     result_dict['temp'] = latest_reading.temp
     
     json_dict = json.dumps(result_dict)
-    
-    return HttpResponse(json_dict)
+    json_dict_yeah_p = "llamas(%s)" % json_dict
+    return HttpResponse(json_dict_yeah_p, mimetype="application/json")

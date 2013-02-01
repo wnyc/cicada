@@ -25,7 +25,7 @@ $(function () {
         chart = new Highcharts.Chart({
             chart: {
                 renderTo: 'chart-container',
-	         height: 350,
+	         height: 300,
 	         marginRight: 0,
 	         backgroundColor: '#FFF',
 			 borderRadius: 0,
@@ -96,7 +96,10 @@ $(function () {
 	     
             xAxis: {
                 type: 'datetime',
-                tickPixelInterval: 150
+                tickPixelInterval: 150,
+				labels: {
+					enabled: false
+				}
             },
 	      yAxis: {
 				showLastLabel: true,

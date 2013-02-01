@@ -1,13 +1,14 @@
-
-#define LED 13
+#define LED 7
 #define SENSOR 0
 #define SAMPLES 4000
+int i;
 float sum = 0;
 float icewater = 916;
 float bodytemp = 604 - icewater;
 float start;
-float freq=18000;
+float freq=22000;
 float coeff, power_7000hz, power_4000hz, power_2500hz;
+float s, s_prev, s_prev2;
 // defines for setting and clearing register bits
 #ifndef cbi
 #define cbi(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
@@ -17,27 +18,11 @@ float coeff, power_7000hz, power_4000hz, power_2500hz;
 #endif
 
 
-# double goertzelFilter(int samples[], double freq, int N) {
-#    double s_prev = 0.0;
-#    double s_prev2 = 0.0;
-#    double coeff,normalizedfreq,power,s;
-#    int i;
-#    normalizedfreq = freq / SAMPLEFREQUENCY;
-#    coeff = 2*cos(2*M_PI*normalizedfreq);
-#    for (i=0; i<N; i++) {
-#        s = samples[i] + coeff * s_prev - s_prev2;
-#        s_prev2 = s_prev;
-#        s_prev = s;
-#    }
-#    power = s_prev2*s_prev2+s_prev*s_prev-coeff*s_prev*s_prev2;
-#    return power;
-#}
 
 void setup() {
-
+  
  pinMode(LED, OUTPUT); // Sets digital pin 13 as output
  // Note: analog pins always set as inputs
-
  // open serial port to send data to Mac
  Serial.begin(9600);
 
@@ -61,6 +46,7 @@ void loop() {
   sum *= 37.0;
   sum /= bodytemp;
   // print value to serial port
+  Serial.print("temp: ");
   Serial.println(sum);
 
   sbi(ADCSRA,ADPS2) ;
@@ -68,42 +54,59 @@ void loop() {
   cbi(ADCSRA,ADPS0) ;
 
 
-  coeff = 2 * cos(2*M_PI*freq/7000);
+  coeff = 2 * cos(2*M_PI*7000/freq);
 
-  start = float(getMills()) / 1000;
+  s = 0;
+  s_prev = 0;
+  s_prev2 = 0;
+  start = float(millis()) / 1000;
   for(i=0; i<SAMPLES; i++) {
     s = float(analogRead(1)) + coeff * s_prev - s_prev2;
-    s_prev2 = s_prev
+    s_prev2 = s_prev;
     s_prev = s;
   }
-  start = float(getMills())/1000 - start;
-
+  start = float(millis())/1000 - start;
   power_7000hz = s_prev2*s_prev2+s_prev*s_prev-coeff*s_prev*s_prev2;
+  s = 0;
+  s_prev = 0;
+  s_prev2 = 0;
 
-  coeff = 2 * cos(2*M_PI*freq/4000);
+  coeff = 2 * cos(2*M_PI*4000/freq);
   for(i=0; i<SAMPLES; i++) {
     s = float(analogRead(1)) + coeff * s_prev - s_prev2;
-    s_prev2 = s_prev
+    s_prev2 = s_prev;
     s_prev = s;
   }
 
-  power_2500hz = s_prev2*s_prev2+s_prev*s_prev-coeff*s_prev*s_prev2;
-  coeff = 2 * cos(2*M_PI*freq/2500);
+  power_4000hz = s_prev2*s_prev2+s_prev*s_prev-coeff*s_prev*s_prev2;
+  s = 0;
+  s_prev = 0;
+  s_prev2 = 0;
+  if (0) {  
+  coeff = 2 * cos(2*M_PI*2500/freq);
   for(i=0; i<SAMPLES; i++) {
     s = float(analogRead(1)) + coeff * s_prev - s_prev2;
-    s_prev2 = s_prev
+    s_prev2 = s_prev;
     s_prev = s;
   }
-
+ 
   power_2500hz = s_prev2*s_prev2+s_prev*s_prev-coeff*s_prev*s_prev2;
+  }
+  sbi(ADCSRA,ADPS2) ;
+  sbi(ADCSRA,ADPS1) ;
+  sbi(ADCSRA,ADPS0) ;
 
-  pinMode(LED, LOW);
-  if ((power_7000hz / 15) < power_4000hz) {
-  if ((power_7000hz / 15) < power_2500hz) {
-    pinMode(LED, HIGH);
-    
+
+  digitalWrite(LED, LOW);
+  if ((power_7000hz / 20) > power_4000hz) {
+    if (power_7000hz > 200)
+    digitalWrite(LED, HIGH); 
   }
-  }
+  Serial.print("sample: ");
+  Serial.println(freq);
+  Serial.print("7000hz: ");
+  Serial.println(power_7000hz);
+  Serial.print("4000hz: ");
+  Serial.println(power_4000hz);
   freq = SAMPLES / start;
-  serial.pri
 }

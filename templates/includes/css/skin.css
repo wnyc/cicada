@@ -115,3 +115,27 @@ ul.parts li {
 	margin: 0 0 0 30px;
 }
 
+#map {
+	overflow: hidden;
+	background: url(../img/map.png) no-repeat;
+	width: 500px;
+	height: 500px;
+}
+
+#report {
+	width: 404px;
+	height: 404px;
+	margin: 48px;
+	position: absolute;
+	z-index: 100;
+	display: none;
+}
+
+#report iframe {
+	border: 2px solid rgba(51, 51, 51, .25);
+	width: 400px;
+	height: 400px;
+	margin: 0;
+	padding: 0;
+	
+}

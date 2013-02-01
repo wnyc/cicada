@@ -46,8 +46,7 @@ void loop() {
   sum *= 37.0;
   sum /= bodytemp;
   // print value to serial port
-  Serial.print("temp: ");
-  Serial.println(sum);
+  
 
   sbi(ADCSRA,ADPS2) ;
   cbi(ADCSRA,ADPS1) ;
@@ -102,11 +101,10 @@ void loop() {
     if (power_7000hz > 200)
     digitalWrite(LED, HIGH); 
   }
-  Serial.print("sample: ");
-  Serial.println(freq);
-  Serial.print("7000hz: ");
+  Serial.print(sum);
+  Serial.println(":");
   Serial.println(power_7000hz);
-  Serial.print("4000hz: ");
+  Serial.println(":");
   Serial.println(power_4000hz);
   freq = SAMPLES / start;
 }

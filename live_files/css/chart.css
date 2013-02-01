@@ -1,0 +1,36 @@
+
+.triangletooltip {
+ padding-left: 15px;
+ padding-top: 10px;
+ padding-right: 15px;
+ padding-bottom: 15px;
+ font-size: 12px;
+ background-color: #ff3300;
+ -moz-box-shadow:    3px 3px 2px 0px rgba(0,0,0,.3);
+ -webkit-box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3);
+ box-shadow:         3px 3px 2px 0px rgba(0,0,0,.3);
+
+}
+.regulartooltip {
+ padding-left: 15px;
+ padding-top: 10px;
+ padding-right: 15px;
+ padding-bottom: 15px;
+ font-size: 10px;
+ background-color: #333;
+ -moz-box-shadow:    3px 3px 2px 0px rgba(0,0,0,.3);
+ -webkit-box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3);
+ box-shadow:         3px 3px 2px 0px rgba(0,0,0,.3);
+
+}
+.ttdetail {
+    padding-top: 8px;
+    font-size: 10px;
+
+}
+.theDate {
+	padding-top: 7px;
+}
+.ttbig {
+    font-size: 15px;
+}

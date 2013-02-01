@@ -1,0 +1,177 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+
+
+<!-- Chartbeat Time Capture -->
+  <script type="text/javascript">var _sf_startpt=(new
+  Date()).getTime()</script>
+  
+<title>NYC Employment | WNYC</title> 
+
+<link rel="stylesheet" href="css/fullpage.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="css/dropdown.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="css/jquery.alerts.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css' />
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.4&sensor=false"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>  
+<script type="text/javascript" src="js/highcharts.js"></script>
+<script type="text/javascript" src="http://project.wnyc.org/census-maps/js/jquery.url.min.js"></script> 
+<script src="js/jquery.alerts.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/script.js"></script>
+<script src="js/this-chart.js"></script>
+
+<meta property="og:title" content="NYC Employment | WNYC" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="TBD" />
+<meta property="og:image" content="thumbnail for facebook" />
+
+<script>
+
+var map;
+var geocoder;
+var mapdrawn = false;
+var basemap_location = "http://project.wnyc.org/nyc-econ-unemployment/fullpage.html";
+var embedmap_location = "http://project.wnyc.org/nyc-econ-unemployment/embed.html";
+
+// get named params from the URL using jquery.url.min.js
+var map_lat = $.url.param("lat");
+var map_lon = $.url.param("lon");
+var map_zoom = $.url.param("zoom");
+var show_center = $.url.param("show_center");
+var is_embed = $.url.param("embed");
+
+
+// set initial starting point for map
+var centerpoint = new google.maps.LatLng(map_lat, map_lon);
+var MY_MAPTYPE_ID = 'wnyc';
+
+// set fusion table to use
+
+</script>
+
+<!-- Start Google Analytic Code --> 
+<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-283599-23']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type =
+'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+<!-- End Google Analytic Code -->
+
+</head> 
+
+
+<body>
+
+<!-- MAP TOP -->
+
+    
+<div id="map_body">
+    <div id="header">
+    <div id="titleline">
+        <div id="headerimg">
+            <a href="" target="_blank"><img src="http://project.wnyc.org/assets/img/header_logo.png"></a>
+        </div>
+        <div id="headertitle">
+            NYC Employment
+        </div>
+    </div>
+    <div id="social">
+        <iframe id="facebook_button" src="http://www.facebook.com/plugins/like.php?app_id=199400463461226&amp;href=TBD&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;width=80&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px;height:21px;float: right" allowTransparency="true"></iframe>
+
+
+        <div id="twitter_button" style="float:right">
+              <a href="http://twitter.com/share" class="twitter-share-button" data-url="TBD" data-count="horizontal" data-via="wnyc">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+        </div>
+    </div>
+
+    <div id="navline">
+    <input type="text" id="zoombox" value="  Zoom in on an address..." name="zoombox"></input>
+    <img id="zoombutton" src="http://project.wnyc.org/assets/img/button_zoom_off.png"></img>
+
+    <div id="navright">
+    <img src="http://project.wnyc.org/assets/img/fullscreen_tools_embed_off.png" onclick="embedBox();">
+    <a href="http://www.wnyc.org/" target="_blank">
+        <img src="http://project.wnyc.org/assets/img/fullscreen_tools_story_off.png">
+    </a>
+    
+    </div>
+
+    </div>
+    <div id="headertext">
+     
+    
+    </div>
+    </div>
+    <!-- THE MAP -->
+    <div id="chart-container"></div>
+    <footer>
+    <div id="footerleft">
+    Put your legend here
+    </div>
+    <div id="footerright">
+    <b>Made by:</b> John Keefe, Steven Melendez and Louise Ma <br />
+    <b>Data from:</b> Total New York City employment (Seasonally adjusted). <br />Source: Barbara Byrne Denham of <a href="http://www.easternconsolidated.com/nyc-employment-alert" target="_blank">Eastern Consolidated</a> <br />
+    </div>
+
+    <div id="embedbox" class="popupbox">
+        <img src="http://project.wnyc.org/assets/img/header_embed.png"></img>
+        <div class="boxhed">Link to this map</div>
+        <div class="boxtext" id="maplink"></div>
+        <div class="boxhed">Embed this map</div>
+        <div class="boxtext" id="embedcode"></div>
+        <div class="closebutton">
+            <img src="http://project.wnyc.org/assets/img/button_close_off.png" id="closeembedbox"></img>
+        </div>
+    </div>
+
+
+
+
+    </div>
+</div>
+</body>
+
+
+<!-- End Box (aka dropdown) -->
+
+
+<!-- BEGIN MAP FOOTER -->
+<!-- END MAP FOOTER -->
+
+<!-- Begin Chartbeat Code -->
+<script type="text/javascript">
+var _sf_async_config={uid:4030,domain:"project.wnyc.org"};
+(function(){
+ function loadChartbeat() {
+   window._sf_endpt=(new Date()).getTime();
+   var e = document.createElement('script');
+   e.setAttribute('language', 'javascript');
+   e.setAttribute('type', 'text/javascript');
+   e.setAttribute('src',
+      (("https:" == document.location.protocol) ?
+"https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" :
+"http://static.chartbeat.com/") +
+      "js/chartbeat.js");
+   document.body.appendChild(e);
+ }
+ var oldonload = window.onload;
+ window.onload = (typeof window.onload != 'function') ?
+    loadChartbeat : function() { oldonload(); loadChartbeat(); }; })();
+</script>
+<!-- End Chartbeat Code -->
+
+</body> 
+</html>

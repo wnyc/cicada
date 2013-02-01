@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 @require_http_methods(["POST"])
 def listen(request):
-    temp = request.POST['temp']
+    temp = (float(request.POST['temp']) * 1.8) + 32
     high_freq = request.POST['7000']
     medium_freq = request.POST['4000']
     low_freq = request.POST['2500']

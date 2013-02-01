@@ -1,0 +1,118 @@
+/* Reset first */
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+	outline: 0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img { 
+	border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+ol,ul {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym { border:0;
+}
+
+/* General */
+
+body {
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	font-family: helvetica, arial, sans-serif;
+	background: #fff;
+	color: #999;
+}
+
+strong {
+	font-weight: bold;
+}
+
+span {
+	color: #000;
+}
+
+em {
+	font-style: italic;
+}
+
+#chartHeader {
+	height: 15px;
+	padding: 7px 10px;
+	font-size: 12px;
+}
+
+#chartHeader .past {
+	float: left;
+}
+
+#chartHeader .current {
+	float: right;
+}
+
+#chart-container {
+	width: 400px;
+	height: 300px;
+	background: #ccc;
+}
+
+#chartFooter {
+	padding: 7px 10px;
+}
+
+#chartFooter .reading {
+	float: left;
+	width: 150px;
+}
+
+#chartFooter .reading .temp {
+	font-size: 36px;
+	font-weight: bold;
+	float: left;
+}
+
+#chartFooter .reading .display_date {
+	clear: left;
+	float: left;
+	font-size: 12px;
+}
+
+#chartFooter .alert {
+	float: right;
+	width: 220px;
+}
+
+#chartFooter .alert .cicada {
+	float: right;
+	margin: 0 0 0 10px;
+}
+
+#chartFooter .alert .yn {
+	font-size: 36px;
+	font-weight: bold;
+	float: right;
+}
+
+#chartFooter .alert .message {
+	float: right;
+	font-size: 12px;
+}

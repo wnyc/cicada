@@ -39,6 +39,10 @@ $(function () {
                             var x = (new Date()).getTime(), // current time
                                 y = getRandomInt(50, 70);
                             series.addPoint([x, y], true, true);
+
+							$('#big_temp').html(y + ' f');
+							$('#date_line').html(x);
+							
 							
 							if (hasGreenBand === false && y >= 64 ) {
 								hasGreenBand = true;
@@ -221,7 +225,7 @@ $(function () {
                         time = (new Date()).getTime(),
                         i;
                     
-                    for (i = -19; i <= 0; i++) {
+                    for (i = -10; i <= 0; i++) {
                         data.push({
                             x: time + i * 1000,
 							y: 50

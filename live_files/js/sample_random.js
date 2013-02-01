@@ -22,6 +22,7 @@ $(function () {
     
         var chart;
 		var hasGreenBand = false;
+		var lightItUp = 0;
         chart = new Highcharts.Chart({
             chart: {
                 renderTo: 'chart-container',
@@ -63,8 +64,13 @@ $(function () {
 							$('#date_line').html(x_formatted);
 							$('#top_date').html(x_formatted);
 							
+							lightItUp -= 1;
+							if (confidence === true) {
+								// if you hear a cicada, light up the indicator for 10 seconds
+								lightItUp = 5;
+							}
 							
-							if (y < 64) {
+							if (lightItUp < 1) {
 								$('#bug_pic').html('<img src="alertNo.png" />');
 								$('#yesno').html('No');
 								$('#detected').html('not detected');

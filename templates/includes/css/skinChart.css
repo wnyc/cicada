@@ -47,6 +47,14 @@ strong {
 	font-weight: bold;
 }
 
+span {
+	color: #000;
+}
+
+em {
+	font-style: italic;
+}
+
 #chartHeader {
 	height: 15px;
 	padding: 7px 10px;
@@ -68,5 +76,43 @@ strong {
 }
 
 #chartFooter {
-	
+	padding: 7px 10px;
+}
+
+#chartFooter .reading {
+	float: left;
+	width: 150px;
+}
+
+#chartFooter .reading .temp {
+	font-size: 36px;
+	font-weight: bold;
+	float: left;
+}
+
+#chartFooter .reading .date {
+	clear: left;
+	float: left;
+	font-size: 12px;
+}
+
+#chartFooter .alert {
+	float: right;
+	width: 220px;
+}
+
+#chartFooter .alert .cicada {
+	float: right;
+	margin: 0 0 0 10px;
+}
+
+#chartFooter .alert .yn {
+	font-size: 36px;
+	font-weight: bold;
+	float: right;
+}
+
+#chartFooter .alert .message {
+	float: right;
+	font-size: 12px;
 }

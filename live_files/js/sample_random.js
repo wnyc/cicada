@@ -27,6 +27,7 @@ $(function () {
                 renderTo: 'chart-container',
 	         height: 300,
 	         marginRight: 0,
+			marginLeft:0,
 	         backgroundColor: '#FFF',
 			 borderRadius: 0,
 			defaultSeriesType: 'spline',

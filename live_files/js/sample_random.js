@@ -23,6 +23,8 @@ $(function () {
         var chart;
 		var hasGreenBand = false;
 		var lightItUp = 0;
+		var localSim = 52;
+		
         chart = new Highcharts.Chart({
             chart: {
                 renderTo: 'chart-container',
@@ -47,19 +49,30 @@ $(function () {
                                      console.log(data);
 
 			             temp = data.temp;
-                                     confidence = data.confidence;
+                         confidence = data.confidence;
                                 },
 				jsonpCallback: 'llamas'
 	                    });
                             
 
                             var x = (new Date()).getTime(), // current time
-                                y = temp;
-								// y = getRandomInt(50, 70);
-								 
+                                
+							// Comment out next two lines for local simulation
+								// y = temp;
+
+							// Comment out next two lines for live operation
+								// y = getRandomInt(50, 66);
+								y = localSim += Math.random();
+								if (y >= 67.5) {
+									y = 67.5;
+									confidence = true;
+								} else {
+								confidence = false;
+								}
+								
                             series.addPoint([x, y], true, true);
 
-							$('#big_temp').html(Math.round(y) + '&deg;f');
+							$('#big_temp').html(y.toFixed(1) + '&deg;f');
 							x_formatted = Highcharts.dateFormat('%l:%M %P %a %b %e, %Y', x, true);
 							$('#date_line').html(x_formatted);
 							$('#top_date').html(x_formatted);
@@ -82,7 +95,7 @@ $(function () {
 							
 							if (hasGreenBand === false && y >= 64 ) {
 								hasGreenBand = true;
-								chart.yAxis[0].removePlotBand('plot-band-grey');
+								chart.yAxis[0].removePlotBand('plot-band-gray');
 								chart.yAxis[0].addPlotBand({
 									color: '#95cb51',
 									from: 64,
@@ -202,7 +215,6 @@ $(function () {
             tooltip: {
                 formatter: function() {
                         return '<b>'+ this.series.name +'</b><br/>'+
-                        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) +'<br/>'+
                         Highcharts.numberFormat(this.y, 2);
                 }
             },
@@ -253,10 +265,10 @@ $(function () {
 
 
             series: [{
-                name: 'Random data',
+                name: 'Recorded Temp',
                 color: '#000',
                 data: (function() {
-                    // generate an array of random data
+                    // generate an initial array y: 50 
                     var data = [],
                         time = (new Date()).getTime(),
                         i;
@@ -265,7 +277,6 @@ $(function () {
                         data.push({
                             x: time + i * 1000,
 							y: 50
-                            // y: getRandomInt(50, 70)
                         });
                     }
                     return data;

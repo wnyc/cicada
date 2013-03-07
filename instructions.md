@@ -33,15 +33,21 @@ Take the breadboard and the 9 330ohm resistors.
 Put one 330ohm resistor in each odd row, connecting a socket in the blue [ - ] column to a socket in the A column next to it.
 
 [ - ]1 to A1
+
 [ - ]3 to A3
+
 [ - ]5 to A5
 
 [ - ]6 to A7
+
 [ - ]8 to A9
+
 [ - ]10 to A11
 
 [ - ]11 to A13
+
 [ - ]13 to A15
+
 [ - ]15 to A17
 
 # Step 5
@@ -63,6 +69,7 @@ Short (cathode, negative) legs goes in odd rows. Long (anode, positive) legs goe
 Take 9 red short cables.
 
 Connect one cable from E2 on the breadboard to Digital 2 on the Arduino.
+
 Connect one cable from E4 on the breadboard to Digital 3 on the Arduino.
 
 Keep going like this:
@@ -82,9 +89,13 @@ Take the 5 10Kohm resistors.
 Make a little ladder of them on the breadboard.
 
 [ - ]21 to C25
+
 D25 to A26
+
 D26 to A27
+
 D27 to A28
+
 D28 to A29
 
 ## Step 9

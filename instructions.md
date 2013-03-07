@@ -29,7 +29,7 @@ If you haven’t already, [download and install Arduino](http://arduino.cc/en/ma
 
 Take the breadboard and the 9 330ohm resistors.
 
-Put one 330ohm resistor in each odd row, connecting a socket in the blue [ - ] column to a socket in the A column next to it.
+Put one 330ohm resistor in each odd row, connecting a socket in the blue **[ - ]** column to a socket in the **A** column next to it.
 
 * [ - ]1 to A1
 * [ - ]3 to A3
@@ -59,9 +59,9 @@ Short (cathode, negative) legs goes in odd rows. Long (anode, positive) legs goe
 
 Take 9 red short cables.
 
-Connect one cable from E2 on the breadboard to Digital 2 on the Arduino.
+Connect one cable from **E2** on the breadboard to **Digital 2** on the Arduino.
 
-Connect one cable from E4 on the breadboard to Digital 3 on the Arduino.
+Connect one cable from **E4** on the breadboard to **Digital 3** on the Arduino.
 
 Keep going like this:
 
@@ -89,29 +89,29 @@ Make a little ladder of them on the breadboard.
 
 Take the remaining red short cable.
 
-Connect E29 to F30
+Connect **E29** to **F30**.
 
 #### Step 10
 
 Take the green long cable.
 
-Connect [ + ]25 on the breadboard to one of the GND sockets on the Arduino.
+Connect **[ + ]25** on the breadboard to one of the **GND** sockets on the Arduino.
 
-[ + ]25 is near the A30 socket.
+**[ + ]25** is near the **A30** socket.
 
 #### Step 11
 
 Take the white long cable.
 
-Connect G30 on the breadboard to the A0 socket on the Arduino.
+Connect **G30** on the breadboard to the **A0** socket on the Arduino.
 
 #### Step 12
 
 Take a red long cable.
 
-Connect [ + ]1 on the breadboard to the 5V socket on the Arduino.
+Connect **[ + ]1** on the breadboard to the **5V** socket on the Arduino.
 
-[ + ]1 is near the J1 socket.
+**[ + ]1** is near the **J1** socket.
 
 #### Step 13
 
@@ -155,7 +155,7 @@ You should have a thermistor with very long wires to connect to the breadboard.
 
 #### Step 20
 
-Connect one end to J30, and the other to [ + ] next to it.
+Connect one end to **J30**, and the other to the  **[ + ]** socket next to it.
 
 #### Step 21
 
@@ -179,9 +179,9 @@ Load up the Arduino program and paste in [this code](http://project.wnyc.org/cic
 
 Connect the Arduino to your computer with the USB cable.
 
-Hit the Verify button in the upper left.
+Hit the **Verify button** in the upper left.
 
-Hit the Upload button in the upper left, to the right of the Verify button.
+Hit the **Upload button** in the upper left, to the right of the Verify button.
 
 Disconnect the Arduino from the USB cable.
 
@@ -199,7 +199,7 @@ Submerge the tip of the dowel (with the thermistor) into the glass.
 
 Take a white short wire.
 
-Connect the remaining GND socket to Digital 11, both on the Arduino board.
+Connect the remaining **GND** socket to **Digital 11**, both on the Arduino board.
 
 #### Step 27
 
@@ -217,9 +217,9 @@ Place the dowel and thermistor under your arm.
 
 #### Step 29
 
-Take the white short wire on the Arduino board and move its end from the Digital 11 to the Digital 12 socket.
+Take the white short wire on the Arduino board and move its end from the **Digital 11** to the **Digital 12** socket.
 
-The other end stays in the GND socket.
+The other end stays in the **GND** socket.
 
 #### Step 30
 
@@ -251,7 +251,7 @@ Take it out and place the thermistor-end of the dowel 8 inches into the ground.
 
 #### Step 35
 
-To take a reading, just plug the wires back into J30 and the [ + ] next to it on the breadboard.
+To take a reading, just plug the wires back into **J30** and the **[ + ]** socket next to it on the breadboard.
 
 The LEDs will light up. Take down their pattern and report it to WNYC!
 

@@ -1,6 +1,6 @@
 # Prep
 
-#### Step 1
+#### Step 01
 
 Go to RadioShack and get:
 
@@ -9,9 +9,8 @@ Go to RadioShack and get:
 * USB cable
 * Wire
 * Electrical tape
-* [links for each item]
 
-#### Step 2
+#### Step 02
 
 Prepare your other parts and tools, like:
 
@@ -20,37 +19,29 @@ Prepare your other parts and tools, like:
 * Scissors
 * Glass of ice and water
 
-#### Step 3
+#### Step 03
 
 If you haven’t already, download and install Arduino on your computer. [link]
 
 # Assembly
 
-#### Step 4
+#### Step 04
 
 Take the breadboard and the 9 330ohm resistors.
 
 Put one 330ohm resistor in each odd row, connecting a socket in the blue [ - ] column to a socket in the A column next to it.
 
-[ - ]1 to A1
+* [ - ]1 to A1
+* [ - ]3 to A3
+* [ - ]5 to A5
+* [ - ]6 to A7
+* [ - ]8 to A9
+* [ - ]10 to A11
+* [ - ]11 to A13
+* [ - ]13 to A15
+* [ - ]15 to A17
 
-[ - ]3 to A3
-
-[ - ]5 to A5
-
-[ - ]6 to A7
-
-[ - ]8 to A9
-
-[ - ]10 to A11
-
-[ - ]11 to A13
-
-[ - ]13 to A15
-
-[ - ]15 to A17
-
-#### Step 5
+#### Step 05
 
 Take the 9 LEDs.
 
@@ -58,13 +49,13 @@ The LEDs will express the temperature of the sensor in a pattern.
 
 They’re the only part in the kit that has “polarity” -- or positive and negative sides -- which means direction matters. The short leg on the LED is the cathode, or negative side. The long leg on the LED is the anode, or positive side.
 
-#### Step 6
+#### Step 06
 
 On the breadboard, make a column of 9 LEDs in the C column.
 
 Short (cathode, negative) legs goes in odd rows. Long (anode, positive) legs goes in even rows.
 
-#### Step 7
+#### Step 07
 
 Take 9 red short cables.
 
@@ -82,23 +73,19 @@ Keep going like this:
 * E16 to Digital 9
 * E18 to Digital 10
 
-#### Step 8
+#### Step 08
 
 Take the 5 10Kohm resistors.
 
 Make a little ladder of them on the breadboard.
 
-[ - ]21 to C25
+* [ - ]21 to C25
+* D25 to A26
+* D26 to A27
+* D27 to A28
+* D28 to A29
 
-D25 to A26
-
-D26 to A27
-
-D27 to A28
-
-D28 to A29
-
-#### Step 9
+#### Step 09
 
 Take the remaining red short cable.
 

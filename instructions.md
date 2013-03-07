@@ -132,7 +132,7 @@ Take the remaining red long cable.
 
 Using scissors, cut it exactly in half. 
 
-### Step 14
+#### Step 14
 
 Gently score the plastic sleeves on both ends (about half an inch from the tips) to reveal the wires.
 

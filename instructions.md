@@ -50,7 +50,7 @@ Put one 330ohm resistor in each odd row, connecting a socket in the blue [ - ] c
 
 [ - ]15 to A17
 
-# Step 5
+## Step 5
 
 Take the 9 LEDs.
 
@@ -58,13 +58,13 @@ The LEDs will express the temperature of the sensor in a pattern.
 
 They’re the only part in the kit that has “polarity” -- or positive and negative sides -- which means direction matters. The short leg on the LED is the cathode, or negative side. The long leg on the LED is the anode, or positive side.
 
-# Step 6
+## Step 6
 
 On the breadboard, make a column of 9 LEDs in the C column.
 
 Short (cathode, negative) legs goes in odd rows. Long (anode, positive) legs goes in even rows.
 
-# Step 7
+## Step 7
 
 Take 9 red short cables.
 

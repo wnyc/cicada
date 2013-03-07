@@ -21,7 +21,7 @@ Prepare your other parts and tools, like:
 
 #### Step 03
 
-If you haven’t already, download and install Arduino on your computer. [link]
+If you haven’t already, [download and install Arduino](http://arduino.cc/en/main/software) on your computer.
 
 # Assembly
 
@@ -175,7 +175,7 @@ Cut off any excess and tape the plastic shut.
 
 #### Step 24
 
-Load up the Arduino program and paste in this code. [link]
+Load up the Arduino program and paste in [this code](http://project.wnyc.org/cicada-detector/arduino/cicada_program_v1.txt).
 
 Connect the Arduino to your computer with the USB cable.
 

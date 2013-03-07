@@ -15,7 +15,7 @@ Go to RadioShack and get:
 Prepare your other parts and tools, like:
 
 * Plastic baggie
-* 12” long wooden dowel
+* 12-inch long wooden dowel
 * Scissors
 * Glass of ice and water
 
@@ -47,7 +47,7 @@ Take the 9 LEDs.
 
 The LEDs will express the temperature of the sensor in a pattern. 
 
-They’re the only part in the kit that has “polarity” -- or positive and negative sides -- which means direction matters. The short leg on the LED is the cathode, or negative side. The long leg on the LED is the anode, or positive side.
+They’re the only part in the kit that has “polarity”—or positive and negative sides—which means direction matters. The short leg on the LED is the cathode, or negative side. The long leg on the LED is the anode, or positive side.
 
 #### Step 06
 
@@ -235,7 +235,7 @@ Remove the white short wire from the Arduino board.
 
 If the LEDs have stopped flashing and only a few are lit, you are ready to deploy!
 
-Deploy
+# Deploy
 
 #### Step 32
 

@@ -55,6 +55,8 @@ On the breadboard, make a column of 9 LEDs in the C column.
 
 Short (cathode, negative) legs goes in odd rows. Long (anode, positive) legs goes in even rows.
 
+Be sure not to bend the legs of the LEDs—they go straight into the sockets!
+
 #### Step 07
 
 Take 9 red short cables.
